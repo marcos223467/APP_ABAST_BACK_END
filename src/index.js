@@ -3,7 +3,7 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3900;
+const port = 3900 || process.env.PORT;
 var mongoose = require('mongoose');
 
 var url = "mongodb+srv://marcos:marcosfichar@cluster0.bty1h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
