@@ -104,6 +104,40 @@ var controller =
         });
     },
 
+    getAsistenciaAlumno: (req, res) => 
+    {
+        var curso = req.params.curso;
+        var id_alumno = req.params.id_alumno;
+        var query = Asistencia.find({nombre_curso: curso, id_alumno: id_alumno});
+
+        query.sort('fecha').exec((err,alasis) => 
+        {
+            if(err)
+            {
+                return res.status(500).send(
+                {
+                    status: "error",
+                    message: "Error al extraer las asistencias"
+                });
+            }
+            
+            if(!alasis)
+            {
+                return res.status(404).send(
+                {
+                    status:"error",
+                    message: "No hay asistencias para mostrar"
+                });
+            }
+
+            return res.status(200).send(
+                {
+                    status:"success",
+                    alasis
+                });
+        });
+    },
+
     edit: (req, res) => 
     {
         var asistenciaId = req.params.id;  
