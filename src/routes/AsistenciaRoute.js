@@ -10,6 +10,8 @@ router.post('/save_asistencia', Asistencia.save);
 
 router.get('/asistencias/:curso', Asistencia.getAsistencias);
 
+router.get('/asistencias_curso/:curso', Asistencia.getAsistenciasCurso);
+
 router.get('/get_asistencia/:curso/:id_alumno', Asistencia.getAsistencia);
 
 router.get('/get_alum_asist/:curso/:id_alumno', Asistencia.getAsistenciaAlumno);
