@@ -109,7 +109,8 @@ var controller =
         var curso = req.params.curso;
         var id_alumno = req.params.id_alumno;
         var query = Asistencia.find({nombre_curso: curso, id_alumno: id_alumno});
-
+        console.log(curso);
+        console.log(id_alumno);
         query.sort('fecha').exec((err,alasis) => 
         {
             if(err)
