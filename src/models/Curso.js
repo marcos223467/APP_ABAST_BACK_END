@@ -10,7 +10,8 @@ var CursoSchema = new Schema({
     poblacion : String,
     entidad : String,
     fecha_ini : Date,
-    fecha_fin : Date
+    fecha_fin : Date,
+    archivado : Boolean
 
 })
 

@@ -16,6 +16,7 @@ var controller =
         curso.entidad = params.entidad;
         curso.fecha_ini = params.fecha_ini;
         curso.fecha_fin = params.fecha_fin;
+        curso.archivado = false;
 
         curso.save((err,cursoStored) =>
         {
@@ -112,7 +113,8 @@ var controller =
             poblacion : params.poblacion,
             entidad : params.entidad,
             fecha_ini : params.fecha_ini,
-            fecha_fin : params.fecha_fin
+            fecha_fin : params.fecha_fin,
+            archivado : params.archivado
         };
         Curso.findOneAndUpdate({_id:cursoId}, newParams, (err, cursoUpdate) =>
         {
